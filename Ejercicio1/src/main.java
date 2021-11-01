@@ -19,8 +19,10 @@ public class main {
             for ( int i = 0; i < num; i++) {
                 ListProcess.add(processBuilder.start());
                 System.out.println(ListProcess.size());
+            }
 
-        } catch (IOException e) {
+
+        } catch (IOException  e) {
             e.printStackTrace();
         }
     }
