@@ -21,8 +21,15 @@ public class main {
                 System.out.println(ListProcess.size());
             }
 
+            for (int i = 1; i < ListProcess.size(); i++) {
+                Process process = ListProcess.get(i);
 
-        } catch (IOException  e) {
+                while (process.isAlive()){
+                    process.waitFor();
+                }
+            }
+
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
