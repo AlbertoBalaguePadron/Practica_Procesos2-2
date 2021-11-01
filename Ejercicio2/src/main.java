@@ -25,11 +25,13 @@ public class main {
             for (int i = 0; i < ListaProcessos.size(); i++) {
                 Process process = ListaProcessos.get(i);
 
+                System.out.println("Inicio: " + LocalDateTime.now().getHour() + ":" + LocalDateTime.now().getMinute() + ":" + LocalDateTime.now().getSecond());
                 while (process.isAlive()){
 
-                    process.waitFor();
-
+                    process.waitFor(500, TimeUnit.MILLISECONDS);
+                    process.destroy();
                 }
+                System.out.println("Final: " + LocalDateTime.now().getHour() + ":" + LocalDateTime.now().getMinute() + ":" + LocalDateTime.now().getSecond());
 
             }
 
